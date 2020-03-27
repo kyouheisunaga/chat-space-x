@@ -1,24 +1,55 @@
-# README
+# Chat-Space
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# DB design
 
-* Ruby version
+## tweetsテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|text|string|-------|
+|image|text|-------|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
-* Configuration
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Database creation
+## groupsテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|name|string|unique: true|
 
-* How to run the test suite
+### Association
+- has_many :tweets
+- has_many :groups_users
+- has_many :users, through: :groups_users
 
-* Services (job queues, cache servers, search engines, etc.)
+## usersテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, default: "", unique: true|
+|encrypted_password|string|null: false, default: "", unique: true|
+|reset_password_token|string|-------|
+|reset_password_sent_at|datetime|-------|
+|remember_created_at|datetime|-------|
+|name|string|null: false, unique: true, index: true|
 
-* ...
+### Association
+- has_many :tweets
+- has_many :groups_users
+- has_many :groups, through: :groups_users
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
