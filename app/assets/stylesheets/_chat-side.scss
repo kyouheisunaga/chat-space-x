@@ -1,11 +1,11 @@
 .chat-side {
   height: 100vh;
   width: 300px;
-  background-color: #253141;
+  background-color: $dark-blue-color;
   .side-header {
     height: 100px;
     padding: 0 20px;
-    color: white;
+    color: $white-color;
     display: flex;
     align-items: center;
     &__box {
@@ -22,18 +22,18 @@
         li {
           margin-left: 5px;
           a {
-            color: white;
+            color: $white-color;
           }
         }
       }
     }
   }
   .groups {
-    background-color: #2f3e51;
+    background-color: $navy-blue-color;
     height: calc(100vh - 100px);
     padding: 20px;
     .group {
-      color: white;
+      color: $white-color;
       text-decoration: none;
       margin-bottom: 40px;
     }

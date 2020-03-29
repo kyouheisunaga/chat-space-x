@@ -1,12 +1,8 @@
-$name-color: #333333;
-$comment-color: #434a54;
-$thin-text-color: #999999;
-$btn-color: #38aef0;
 
 .chat-main {
   height: 100vh;
   width: calc(100vw - 300px);
-  background-color: #ffffff;
+  background-color: $white-color;
   .main-header {
     height: 100px;
     padding: 28px 40px 32px 40px;
@@ -19,7 +15,7 @@ $btn-color: #38aef0;
         margin: 7px 0 15px 0;
       }
       &__menber {
-        color: $thin-text-color;
+        color: $light-text-color;
         font-size: 12px;
         float: left;
         &__name {
@@ -41,7 +37,7 @@ $btn-color: #38aef0;
   }
   .messages {
     height: calc(100vh - 190px);
-    background-color: #fafafa;
+    background-color: $light-gray-color;
     padding: 35px 40px;
     &__box {
       &__user {
@@ -51,7 +47,7 @@ $btn-color: #38aef0;
           font-size: 16px;
         }
         &__createday {
-          color: $thin-text-color;
+          color: $light-text-color;
           font-size: 12px;
           margin-left: 5px;
         }
@@ -65,7 +61,7 @@ $btn-color: #38aef0;
   }
   .form {
     height: 90px;
-    background-color: #d2d2d2;
+    background-color: $gray-color;
     padding: 20px 40px;
     form {
       display: flex;
@@ -96,7 +92,7 @@ $btn-color: #38aef0;
         padding: 0 30px;
         margin-left: 15px;
         background-color: $btn-color;
-        color: white;
+        color: $white-color;
         cursor: pointer;
       }
     }
