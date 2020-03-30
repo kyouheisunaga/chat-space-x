@@ -5,7 +5,7 @@
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__edit-user
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fas', 'edit')
         %li.side-header__box__new-group
           = link_to edit_user_path(current_user) do
