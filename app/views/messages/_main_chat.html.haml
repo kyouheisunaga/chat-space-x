@@ -1,13 +1,17 @@
+.messages
+  = render @messages
+
 .chat-main
   .main-header
     .main-header__box
-      %p.main-header__box__group-name
-        text
+      .main-header__box__group-name
+        = @group.name
       %ul.main-header__box__menber
         Member :
-        %li.main-header__box__menber__name
-          masa
-    = link_to "#", class: "main-header__edit-group" do
+        - @group.users.each do |user|
+          %li.main-header__box__menber__name
+            = user.name
+    = link_to edit_group_path(@group), class: "main-header__edit-group" do
       %p.main-header__edit-group__btn
         Edit
   .messages
@@ -28,10 +32,10 @@
       .messages__box__comment
         今日は夜から雨
   .form
-    %form.new-message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.label :image, class: 'input-box__image' do
           = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn", value: "Send"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
