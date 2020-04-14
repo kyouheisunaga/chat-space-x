@@ -1,6 +1,3 @@
-.messages
-  = render @messages
-
 .chat-main
   .main-header
     .main-header__box
@@ -15,22 +12,7 @@
       %p.main-header__edit-group__btn
         Edit
   .messages
-    .messages__box
-      .messages__box__user
-        .messages__box__user__name
-          masa
-        .messages__box__user__createday
-          2019/11/20(Wed) 17:43:01
-      .messages__box__comment
-        おはよう！
-    .messages__box
-      .messages__box__user
-        .messages__box__user__name
-          masa
-        .messages__box__user__createday
-          2019/11/20(Wed) 17:43:34
-      .messages__box__comment
-        今日は夜から雨
+    = render @messages
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
