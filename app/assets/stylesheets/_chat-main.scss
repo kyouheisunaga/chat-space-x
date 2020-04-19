@@ -39,27 +39,31 @@
     height: calc(100vh - 190px);
     background-color: $light-gray-color;
     padding: 35px 40px;
-    &__box {
-      &__user {
-        display: flex;
-        &__name {
-          color: $name-color;
-          font-size: 16px;
+    .message {
+      &__box {
+        margin-bottom: 40px;
+        &__user {
+          display: flex;
+          &__name {
+            color: $name-color;
+            font-size: 16px;
+          }
+          &__createday {
+            color: $light-text-color;
+            font-size: 12px;
+            margin-left: 5px;
+          }
         }
-        &__createday {
-          color: $light-text-color;
-          font-size: 12px;
-          margin-left: 5px;
+        &__comment {
+          color: $comment-color;
+          font-size: 14px;
+          margin: 10px 0;
         }
-      }
-      &__comment {
-        color: $comment-color;
-        font-size: 14px;
-        margin: 12px 0 46px 0;
-      }
-      &__image {
-        height: 100px;
-        width: 100px;
+        &__image {
+          height: 100px;
+          width: 100px;
+          margin: 10px 0;
+        }
       }
     }
   }

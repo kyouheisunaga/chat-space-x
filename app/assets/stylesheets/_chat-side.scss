@@ -35,7 +35,14 @@
     .group {
       color: $white-color;
       text-decoration: none;
-      margin-bottom: 40px;
+      &__group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__latest-message {
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
     }
   }
 }

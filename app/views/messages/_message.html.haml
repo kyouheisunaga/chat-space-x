@@ -1,10 +1,11 @@
-.messages__box
-  .messages__box__user
-    .messages__box__user__name
-      = message.user.name
-    .messages__box__user__createday
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  - if message.content.present?
-    %p.messages__box__comment
-      = message.content
-  = image_tag message.image.url, class: 'messages__box__image' if message.image.present?
+.message
+  .message__box
+    .message__box__user
+      .message__box__user__name
+        = message.user.name
+      .message__box__user__createday
+        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    - if message.content.present?
+      %p.message__box__comment
+        = message.content
+    = image_tag message.image.url, class: 'message__box__image' if message.image.present?
