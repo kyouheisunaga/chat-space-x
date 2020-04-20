@@ -1,6 +1,5 @@
 $(function(){ 
   function buildHTML(message){
-    console.log(`html ${JSON.stringify(message)}`)
     if ( message.image.url !== null ) {
       var html =
         `<div class="message">
@@ -42,7 +41,6 @@ $(function(){
   }
 
   $('#new_message').on('submit', function(e){
-    console.log("hidouki")
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -55,7 +53,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log("done")
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.submit-btn').prop('disabled', false);
@@ -63,7 +60,6 @@ $(function(){
       $('form')[0].reset();
     })
     .fail(function(e) {
-      console.log(e)
       alert("メッセージ送信に失敗しました");
     })
   })
